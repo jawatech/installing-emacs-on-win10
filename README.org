@@ -1,0 +1,51 @@
+* 在WIN10環境下安裝emacs (多版本共存)
+
+基本上24.3版以上都用此法安裝在同一機器上，是沒有問題的
+
+- 這個技巧的發想來自 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/MS_002dWindows-Registry.html]] 以及 [[https://github.com/syl20bnr/spacemacs]]
+
+- 簡單來說就是用 HOME 環境變數指定起始目錄，將設定寫在 .cmd 結尾的批次檔，在桌面設定捷徑以方便執行
+
+- 為求適用不同版本，下文中 NNN 即指版本編號，例如 C:\Program Files\emacs262 ，262即對應的版本號；ABC指使用者帳戶名
+
+- 當然同一版本的 emacs 你可能也會做不同的設定，那就 NNN_N 這樣吧，不要重覆就好
+** 取得安裝檔
+
+    2019年最新版本可參考 [[http://ftp.twaren.net/Unix/GNU/gnu/emacs/windows/emacs-26/]]
+    
+** 建立所要安裝的目錄並將安裝檔解壓至其下
+#+BEGIN_QUOTE
+建議把所有版本的 emacs 解壓到同一位置並加上版本編號，如 C:\Program Files\emacsNNN
+#+END_QUOTE
+
+** 建立批次檔所在目錄
+建議名稱為 emacsNNN
+#+BEGIN_QUOTE
+簡單來說，每台機器上、每個版本的 emacs 安裝目錄通常不同，因此捷徑所指向的批次檔不會共用，預先建立目錄來隔離這些版本，以免互相干擾
+
+預設情況下，emacs 會把這個目錄當成 ~ ，並於其下建立 .emacs.d 目錄
+
+如果有需要多機器共用配置，可以放在雲端硬碟如 Dropbox 之下，並做一些調整；但本文為初學者而寫，這部分未來再說明
+#+END_QUOTE
+
+** 建立批次檔
+
+批次檔放在上一步所建立的目錄即可，內容如下，可用 notepad 建立並儲存之
+#+BEGIN_SRC shell
+@echo off
+SETLOCAL
+set HOME=C:\Users\ABC\emacsNNN\
+start "" "C:\Program Files\emacsNNN\bin\runemacs.exe"
+#+END_SRC
+
+** 建立指向批次檔的捷徑
+
+在檔案管理員中找到該批次檔，按右鍵->傳送到->桌面(建立捷徑)，捷徑會在桌面，改成好記的名字、圖示
+
+    - 捷徑名稱一定要能一目瞭然，包含主程式名稱及版本為佳
+    - 捷徑名稱最好以英文字母開頭，方便在 Win-D組合鍵後直接按下此字母來高亮它，再按下 enter 鍵執行它
+
+** 第一次啟動
+
+    利用剛才的捷徑啟動程式
+
