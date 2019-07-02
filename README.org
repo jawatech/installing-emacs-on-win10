@@ -25,6 +25,8 @@
 
 預設情況下，emacs 會把這個目錄當成 ~ ，並於其下建立 .emacs.d 目錄
 
+要安裝 spacemacs 可在此目錄下執行 git clone https://github.com/syl20bnr/spacemacs .emacs.d
+
 如果有需要多機器共用配置，可以放在雲端硬碟如 Dropbox 之下，並做一些調整；但本文為初學者而寫，這部分未來再說明
 #+END_QUOTE
 
