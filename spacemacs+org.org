@@ -1,2 +1,9 @@
-# test
-test
+* 在 spacemacs 下使用 org mode
+
+** 變更設定檔，啟動 org mode
+
+參考 [[https://github.com/syl20bnr/spacemacs/issues/12308]]
+
+- SPC f e d 打開 .spacemacs
+- 移除 ORG 前的分號(大約在第45行)
+- 存檔後重啟
