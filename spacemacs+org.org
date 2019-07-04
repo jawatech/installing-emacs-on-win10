@@ -1,6 +1,8 @@
 * 在 spacemacs 下使用 org mode
 
-** 變更設定檔，啟動 org mode
+如果沒安裝過 git for windows 的話，啟動後會有錯誤訊息，請到 [[https://git-scm.com/download/win]] 抓來裝一下
+
+** 變更設定檔，重新啟動 org mode
 
 參考 [[https://github.com/syl20bnr/spacemacs/issues/12308]]
 
